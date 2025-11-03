@@ -140,7 +140,7 @@ p:not([class]):not(:last-child) {
 }
 
 .header-menu-link.is-current:hover::after {
-  --headerMenuListItemColor: var(--color-grey);;
+  --headerMenuListItemColor: var(--color-grey);
 }
 
 .header-info {
