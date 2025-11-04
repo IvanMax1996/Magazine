@@ -157,3 +157,62 @@ p:not([class]):not(:last-child) {
   border-radius: 50%;
   background-color: var(--color-dark);
 }
+
+@media screen and (max-width: 1024px) {
+  .header-wrap {
+    column-gap: 36px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 15px 15px 0;
+  }
+
+  .header-wrap {
+    flex-wrap: wrap;
+  }
+
+  .header-logo {
+    order: -2;
+  }
+
+  .header-info {
+    order: -1;
+  }
+
+  .header-menu {
+    width: 100%;
+  }
+
+  .header-menu-list {
+    justify-content: space-around;
+  }
+
+  .header-menu-link {
+    height: 50px;
+  }
+
+  .header-menu-link.is-current::after {
+    bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    font-size: 18px;
+  }
+
+  .header-menu-list {
+    column-gap: 10px;
+    font-size: 14px;
+  }
+
+  .header-menu-link {
+    height: 35px;
+  }
+
+  .header-menu-link.is-current::after {
+    bottom: 8px;
+  }
+}
