@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Inter";
-  src: url('./fonts/Inter-Regular.woff2') format("woff2");
+  src: url("./fonts/Inter-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Inter";
-  src: url('./fonts/Inter-Medium.woff2') format("woff2");
+  src: url("./fonts/Inter-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -18,15 +18,11 @@
   --color-dark: #000000;
   --color-light: #FFFFFF;
   --color-grey: #808080;
-
   --border-radius: 55px;
   --border: 1px solid var(--color-dark);
-
-  --font-family-base: 'Inter', sans-serif;
+  --font-family-base: "Inter", sans-serif;
   --container-width: 1732px;
-
   --container-padding-x: 15px;
-
   --transition-duration: 0.2s;
 }
 
@@ -44,6 +40,23 @@ body {
   padding-inline: var(--container-padding-x);
 }
 
+.button {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  padding: 1px 6px;
+  background-color: var(--color-light);
+  border: var(--border);
+  border-radius: 55px;
+}
+
+.button:hover {
+  background-color: var(--color-grey);
+  color: var(--color-light);
+  border: 1px solid var(--color-grey);
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   text-transform: uppercase;
@@ -56,6 +69,7 @@ a {
 
 a,
 body,
+button,
 input,
 textarea,
 svg * {
@@ -80,9 +94,8 @@ p:not([class]):not(:last-child) {
 }
 
 .header {
-  padding-inline: 34px;
-  font-weight: 500;
   font-size: 20px;
+  font-weight: 500;
 }
 
 .header-wrap {
@@ -91,6 +104,7 @@ p:not([class]):not(:last-child) {
   align-items: center;
   column-gap: 40px;
   border-bottom: var(--border);
+  margin-bottom: 30px;
 }
 
 .header-logo {
@@ -101,7 +115,7 @@ p:not([class]):not(:last-child) {
 }
 
 .header-logo::before {
-  content: '';
+  content: "";
   width: 25px;
   height: 28px;
   background: currentColor;
@@ -116,7 +130,6 @@ p:not([class]):not(:last-child) {
 
 .header-menu-link {
   --headerMenuListItemColor: var(--color-dark);
-
   position: relative;
   display: flex;
   align-items: center;
@@ -131,7 +144,7 @@ p:not([class]):not(:last-child) {
 }
 
 .header-menu-link.is-current::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 22px;
   height: 1px;
@@ -151,11 +164,59 @@ p:not([class]):not(:last-child) {
 }
 
 .header-info::after {
-  content: '';
+  content: "";
   width: 26px;
   aspect-ratio: 1;
   border-radius: 50%;
   background-color: var(--color-dark);
+}
+
+.jenny-art {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  min-height: 786px;
+  margin-bottom: 100px;
+  padding-bottom: 38px;
+  border-bottom: var(--border);
+}
+
+.jenny-art-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.jenny-art-inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  font-weight: 500;
+}
+
+.jenny-art-header {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.jenny-art-actions {
+  display: flex;
+  column-gap: 8px;
+}
+
+.jenny-art-title {
+  max-width: 634px;
+  padding-bottom: 18px;
+  border-bottom: var(--border);
+  line-height: 1.1;
+  font-size: 77px;
+}
+
+.jenny-art-description {
+  width: 480px;
 }
 
 @media screen and (max-width: 1024px) {
