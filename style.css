@@ -96,6 +96,7 @@ p:not([class]):not(:last-child) {
 .header {
   font-size: 20px;
   font-weight: 500;
+  margin-bottom: 30px;
 }
 
 .header-wrap {
@@ -104,7 +105,6 @@ p:not([class]):not(:last-child) {
   align-items: center;
   column-gap: 40px;
   border-bottom: var(--border);
-  margin-bottom: 30px;
 }
 
 .header-logo {
@@ -172,11 +172,13 @@ p:not([class]):not(:last-child) {
 }
 
 .jenny-art {
+  margin-bottom: 100px;
+}
+
+.jenny-art-body {
   display: flex;
   justify-content: space-between;
-  gap: 100px;
-  min-height: 786px;
-  margin-bottom: 100px;
+  column-gap: 100px;
   padding-bottom: 38px;
   border-bottom: var(--border);
 }
@@ -212,16 +214,25 @@ p:not([class]):not(:last-child) {
   padding-bottom: 18px;
   border-bottom: var(--border);
   line-height: 1.1;
-  font-size: 77px;
+  font-size: clamp(24px, 4.01vw, 77px);
 }
 
 .jenny-art-description {
-  width: 480px;
+  font-size: clamp(12px, 1.14vw, 22px);
+  max-width: 480px;
 }
 
 @media screen and (max-width: 1024px) {
   .header-wrap {
     column-gap: 36px;
+  }
+
+  .jenny-art {
+    margin-bottom: 50px;
+  }
+
+  .jenny-art-title {
+    max-width: 700px;
   }
 }
 
@@ -257,11 +268,39 @@ p:not([class]):not(:last-child) {
   .header-menu-link.is-current::after {
     bottom: 15px;
   }
+
+  .jenny-art-body {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  .jenny-art-body,
+  .jenny-art-info,
+  .jenny-art-inner {
+    row-gap: 20px;
+  }
+
+  .jenny-art-title {
+    align-self: center;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .jenny-art-description {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .jenny-art-img-container {
+    width: 50%;
+    margin-inline: auto;
+  }
 }
 
 @media screen and (max-width: 576px) {
   .header {
     font-size: 18px;
+    margin-bottom: 20px;
   }
 
   .header-menu-list {
@@ -275,5 +314,25 @@ p:not([class]):not(:last-child) {
 
   .header-menu-link.is-current::after {
     bottom: 8px;
+  }
+
+  .jenny-art {
+    margin-bottom: 20px;
+  }
+
+  .jenny-art-body {
+    padding-bottom: 10px;
+  }
+
+  .jenny-art-body, .jenny-art-inner {
+    row-gap: 10px;
+  }
+
+  .jenny-art-info {
+    row-gap: 20px;
+  }
+
+  .jenny-art-header, .jenny-art-actions  {
+    column-gap: 4px;
   }
 }
