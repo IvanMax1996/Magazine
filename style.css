@@ -352,31 +352,27 @@ p:not([class]):not(:last-child) {
   margin-bottom: 18px;
 }
 
-.section-title-latest-posts,
-.section-title-latest-posts-short,
-.section-title-popular,
-.section-title-popular-short {
+.section-title {
+  --sectionTitleMaxWidth: 380px;
+  --sectionTitleFontSize: clamp(18px, 1.25vw, 24px);
+  --sectionTitlePaddingBottom: 5px;
+
+  max-width: var(--sectionTitleMaxWidth);
+  font-size: var(--sectionTitleFontSize);
+  padding-bottom: var(--sectionTitlePaddingBottom);
   border-bottom: var(--border);
 }
 
-.section-title-latest-posts-short, .section-title-popular-short {
-  max-width: 380px;
-  font-size: clamp(18px, 1.25vw, 24px);
-  padding-bottom: 5px;
-}
-
-.section-title-latest-posts, .section-title-popular {
-  max-width: 764px;
-  font-size: clamp(20px, 1.92vw, 37px);
-  padding-bottom: 8px;
-}
-
 .section-title-popular {
-  max-width: 544px;
+  --sectionTitleMaxWidth: 544px;
+  --sectionTitleFontSize: clamp(20px, 1.92vw, 37px);
+  --sectionTitlePaddingBottom: 8px;
 }
 
-.section-title-popular-short {
-  max-width: 250px;
+.section-title-latest-posts {
+  --sectionTitleMaxWidth: 764px;
+  --sectionTitleFontSize: clamp(20px, 1.92vw, 37px);
+  --sectionTitlePaddingBottom: 8px;
 }
 
 .popular {
@@ -460,25 +456,22 @@ p:not([class]):not(:last-child) {
     height: auto;
   }
 
+  .popular {
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
   .popular-content, .popular-right-wrapper {
     row-gap: 20px;
   }
 
   .popular-posts-list {
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 20px
   }
 
   .popular-posts-link-img {
     margin-bottom: 12px;
-  }
-
-  .section-header-date-popular {
-    margin-bottom: 6px;
-  }
-
-  .section-title-popular {
-    padding-bottom: 4px;
   }
 }
 
@@ -561,32 +554,12 @@ p:not([class]):not(:last-child) {
     row-gap: 16px;
   }
 
-  .latest-posts-link-title {
+  .latest-posts-link-title, .popular-posts-link-img {
     margin-bottom: 10px;
   }
 
-  .popular-content {
+  .popular-content, .popular-right-wrapper {
     row-gap: 10px;
-  }
-
-  .popular-posts-list {
-    column-gap: 10px;
-  }
-
-  .popular-posts-link-img {
-    margin-bottom: 6px;
-  }
-
-  .section-header-date-popular {
-    margin-bottom: 4px;
-  }
-
-  .popular-right-wrapper {
-    row-gap: 10px;
-  }
-
-  .section-title-popular-short {
-    max-width: 376px;
   }
 }
 
@@ -648,14 +621,7 @@ p:not([class]):not(:last-child) {
     max-width: 300px;
   }
 
-  .popular-posts-list {
-    column-gap: 4px;
+  .popular {
+    margin-bottom: 70px;
   }
-
-  .section-header-date-popular {
-    justify-content: space-between;
-    column-gap: 1px;
-  }
-
-
 }
